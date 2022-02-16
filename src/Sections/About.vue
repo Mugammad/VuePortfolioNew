@@ -61,8 +61,8 @@ export default {
 
 <style>
   .line {
-    margin-top: 1rem;
-  border: 3px solid var(--darkgreen);
+  margin-top: 1rem;
+  border-bottom: 6px solid var(--darkgreen);
   background: var(--darkgreen);
   width: 70px;
 }
@@ -70,12 +70,6 @@ export default {
 #About {
   z-index: 1;
   background: var(--black);
-}
-
-
-.lineTwo {
-  border: 3px solid #1d3557;
-  width: 70px;
 }
 
 .aboutInfo {

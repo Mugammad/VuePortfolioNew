@@ -59,15 +59,6 @@ export default {
   background: var(--black2);
 }
 
-.header {
-  padding: 70px 0;
-  border-bottom: 0.1px solid var(--grey);
-}
-
-.header p {
-  margin-top: 1rem;
-}
-
 #grid {
   display: grid;
   align-items: center;

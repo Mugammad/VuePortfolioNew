@@ -19,7 +19,6 @@
                     <div class="middle">
                         <div class="text" @click="toggleModal(index)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg></div>
                     </div>
-                    <Modal :header="project.title" v-if="project.showModal"/>
                 </div>
             </div>
       </div>
@@ -27,12 +26,13 @@
 </template>
 
 <script>
-import Modal from '../components/Modal.vue'
 export default {
-  components: { Modal },
+    props: [
+        'projects'
+    ],
     data() {
         return {
-            projects: []
+            
         }
     },
     methods: {
@@ -40,18 +40,10 @@ export default {
             this.$emit('clicked')
         },
         toggleModal(i){
-            this.projects[i].showModal = true
+            this.$emit('toggle', i)
         }
     },
-    mounted() {
-        fetch('https://portfolio-backend-mugammad.herokuapp.com/projects')
-        .then(res => res.json())
-        .then(data => {
-            data.projects.forEach(project => {
-                this.projects.push({...project, showModal: false})
-            });
-        })
-    },
+    
 }
 </script>
 

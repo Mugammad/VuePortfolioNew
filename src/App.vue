@@ -6,8 +6,13 @@
       <About @clicked="scroll('About')" />
       <Experience @clicked="scroll('Experience')"/>
       <Skills @clicked="scroll('Skills')"/>
-      <Projects @clicked="scroll('Projects')"/>
+      <Projects @clicked="scroll('Projects')" :projects="projects" @toggle="toggleModal"/>
       <Contact @clicked="scroll('Contact')"/>
+      <div v-for="(project, index) in projects" :key="project.id">
+        <transition name="fade3" mode="in-out">
+          <Modal :header="project.title" :image="project.img" :desc="project.description" v-if="project.showModal" @clicked="toggleModal(index)"/>
+        </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +25,7 @@ import Experience from './Sections/Experience.vue'
 import Projects from './Sections/Projects.vue'
 import Contact from './Sections/Contact.vue'
 import Skills from './Sections/Skills.vue'
+import Modal from './components/Modal.vue'
 export default {
   name: 'App',
   components: {
@@ -30,14 +36,33 @@ export default {
     Projects,
     Contact,
     Skills,
+    Modal,
+  },
+
+  data() {
+    return {
+      projects: []
+    }
   },
   methods: {
       scroll(id) {  
       document.getElementById(id).scrollIntoView({
         behavior: "smooth"
       });
+    },
+    toggleModal(i){
+      this.projects[i].showModal = !this.projects[i].showModal
     }
-  }
+  },
+  mounted() {
+        fetch('https://portfolio-backend-mugammad.herokuapp.com/projects')
+        .then(res => res.json())
+        .then(data => {
+            data.projects.forEach(project => {
+                this.projects.push({...project, showModal: false})
+            });
+        })
+    },
 
 }
 </script>
@@ -93,4 +118,23 @@ export default {
   margin-left: 0;
 }
 
+.header {
+  padding: 70px 0;
+  border-bottom: 0.1px solid var(--grey);
+}
+
+.header p {
+  margin-top: 1rem;
+}
+
+.fade3-enter-active,
+.fade3-leave-active {
+  transition: opacity 0.3s;
+}
+.fade3-enter{
+  opacity: 0;
+}
+.fade3-leave-to{
+  opacity: 0;
+}
 </style>

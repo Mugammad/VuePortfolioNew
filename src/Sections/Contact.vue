@@ -73,7 +73,7 @@ export default {
     
 <style>
     #Contact {
-        z-index: 5;
+        z-index:5;
         background: var(--black);
     }
 
