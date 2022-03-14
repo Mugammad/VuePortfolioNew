@@ -1,11 +1,14 @@
 <template>
-    <div class="nav v-scroll-spy-active v-scroll-spy-link" >
-        <a v-for="section of sections" :key="section.id" :href="section.id">{{ section.name }}</a>
+    <div class="nav v-scroll-spy-active v-scroll-spy-link" :id="navId">
+        <a @click="hideNav" v-for="section of sections" :key="section.id" :href="section.id">{{ section.name }}</a>
     </div>
 </template>
 
 <script>
 export default {
+    props:[
+        'navId'
+    ],
     data() {
         return {
             sections: [
@@ -19,7 +22,11 @@ export default {
             ],
         }
     },
-
+    methods: {
+        hideNav() {
+            this.$emit('hideNav')
+        }
+    },
 }
 </script>
 

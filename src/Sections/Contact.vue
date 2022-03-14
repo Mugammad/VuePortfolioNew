@@ -1,6 +1,18 @@
 <template>
     <div class="section" id="Contact" @click="clicked">
         <div class="inside">
+            <div>
+                <h1>CONTACT</h1>
+                <div class="line"></div>
+            </div>
+            <div class="header">
+                <h4>
+                    LET'S KEEP IN TOUCH
+                </h4>
+                <p>
+                    Out of the 26.2 million web developers in the world (yeah, 26.2 million), you managed to come across my website. Below are links for you to get in touch with me. Who knows, we might never meet again.
+                </p>
+            </div>
             <div class="contactForm mt-5">
                 <h2>
                     TALK TO ME!
@@ -73,8 +85,8 @@ export default {
     
 <style>
     #Contact {
-        z-index:5;
-        background: var(--black);
+        z-index:6;
+        background: var(--black2);
     }
 
     .form-control {
@@ -93,5 +105,14 @@ export default {
         background: var(--darkgreen);
     }
 
+    .submit .btn {
+        background: var(--black2);
+        transition: 0.3s;
+        cursor: pointer;
+    }
 
+    .submit .btn:hover {
+        background: var(--darkgreen);
+        transition: 0.3s;
+    }
 </style>
