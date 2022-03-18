@@ -40,7 +40,7 @@ export default {
       experiences: [
         {id: 1, svg: "fas fa-mug-hot",  name: "COFFEE SHOP", status: ["CASHIER"], period: "2015-2019", description: "I worked most weekends at a small coffee shop in Town Center, Mitchells Plain. My duties were to take orders as well as assist in the kitchen when I was needed."},
         {id: 2, svg: "fas fa-user-graduate",  name: "DARUL ARQAM", status: ["HIGH SCHOOL"], period: "2013-2017", description: "Graduated high school with a Bachelors pass. During this time I also worked part time at a small coffee shop located in Mitchells Plain."},
-        {id: 3, svg: "fas fa-university",  name: "UWC", status: ["UNDERGRAD", "(INCOMPLETE)"], period: "2018-2020", description: "Studied for a Bachelors degree in Computer Science. learned Python as well as Java during this time. This is where my coding journey began and where I grew an interest in computer programming."},
+        {id: 3, svg: "fas fa-university",  name: "UWC", status: ["UNDERGRAD", "(INCOMPLETE)"], period: "2018-2021", description: "Studied for a Bachelors degree in Computer Science. learned Python as well as Java during this time. This is where my coding journey began and where I grew an interest in computer programming."},
         {id: 4, svg: "fas fa-laptop-code",  name: "LC ACADEMY", status: ["WEB DEV"], period: "2021-PRESENT", description: "Started learning web deveopment at a six month coding bootcamp."},
       ]
     }
