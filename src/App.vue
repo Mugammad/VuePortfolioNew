@@ -246,7 +246,7 @@ export default {
 }
 
 @media screen and (max-width: 685px){
-  #grid{
+  .grid{
     display: block;
   }
 

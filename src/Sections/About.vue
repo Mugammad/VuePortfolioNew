@@ -7,19 +7,19 @@
             </div>
             <div class="aboutInfo">
                 <div class="myInfo">
-                    <p><b>Full Name:</b> Mugammad Breda</p>
+                    <h5>Full Name: </h5><p>Mugammad Breda</p>
                 </div>
                 <div class="myInfo">
-                    <p><b>Date of Birth:</b> 02/05/1999</p>
+                    <h5>Date of Birth:</h5><p>02/05/1999</p>
                 </div>
                 <div class="myInfo">
-                    <p><b>Location:</b> Cape Town, South Africa</p>
+                    <h5>Location:</h5><p>Cape Town, South Africa</p>
                 </div>
                 <div class="myInfo">
-                    <p><b>Cell Phone Number:</b> (+27) 72 813 0202</p>
+                    <h5>Cell Phone Number:</h5><p>(+27) 72 813 0202</p>
                 </div>
                 <div class="myInfo">
-                    <p><b>Email Address:</b> <a href="mailto:mugammadbreda1999@gmail.com">mugammadbreda1999@gmail.com</a></p>
+                    <h5>Email Address:</h5><p><a href="mailto:mugammadbreda1999@gmail.com">mugammadbreda1999@gmail.com</a></p>
                 </div>
             </div>
 
@@ -79,6 +79,8 @@ export default {
 .myInfo {
   border-bottom: rgba(241, 250, 238, 0.5) 1px solid;
   padding: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .bio {

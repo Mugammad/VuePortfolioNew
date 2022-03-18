@@ -14,7 +14,7 @@
                     These are just a few events that I am confident in sharing and hopefully helps me land a job.
                 </p>
             </div>
-            <div ref="experience" v-for="exp in experiences" :key="exp.id" class="exp" id="grid">
+            <div ref="experience" v-for="exp in experiences" :key="exp.id" class="exp grid">
                 <div class="grid-1">
                     <div class="iconBox">
                         <div class="iconExp" ><i :class="exp.svg"></i></div>
@@ -59,10 +59,19 @@ export default {
   background: var(--black2);
 }
 
-#grid {
+.grid {
   display: grid;
   align-items: center;
   min-height: 100px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 100%;
+  border-bottom: 0.1px solid var(--grey);
+  padding: 20px 0;
+}
+
+.gridGlobal {
+  display: grid;
+  align-items: center;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 100%;
   border-bottom: 0.1px solid var(--grey);
@@ -75,6 +84,14 @@ export default {
 
 .grid-2 {
   grid-column: 4/ span 4;
+}
+
+.grid-icon-start {
+  grid-column: 1/ span 1;
+}
+
+.grid-icon-end {
+  grid-column: 2/ span 5;
 }
 
 
