@@ -40,8 +40,8 @@
                     <div class="quoteFooter">
                         <img :src="testimonial.img" alt="">
                         <div class="personInfo">
-                            <h2>{{ testimonial.name.toUpperCase() }}</h2>
-                            <h3>{{ testimonial.relationship.toUpperCase() }}</h3>
+                            <h4>{{ testimonial.name.toUpperCase() }}</h4>
+                            <h5>{{ testimonial.relationship.toUpperCase() }}</h5>
                         </div>
                     </div>
                 </div>
@@ -135,8 +135,8 @@ export default {
 
     .quoteFooter img {
         margin-right: 2rem;
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
     }
 

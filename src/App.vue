@@ -246,6 +246,14 @@ export default {
 }
 
 @media screen and (max-width: 685px){
+  #grid{
+    display: block;
+  }
+
+  .grid-1{
+    margin-bottom: 1rem;
+  }
+
   .navBtn {
     display: block;
   }
