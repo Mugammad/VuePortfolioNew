@@ -1,30 +1,25 @@
 <template>
-    <div class="nav v-scroll-spy-active v-scroll-spy-link" :id="navId">
-        <a @click="hideNav" v-for="section of sections" :key="section.id" :href="section.id">{{ section.name }}</a>
+    <div class="nav" :id="navId">
+        <a :class="[anchor == section.name && !isGrey ? 'activeAnchor' : '', anchor == section.name && isGrey ? 'activeAnchorGrey' : '', anchor != section.name ? 'unactiveNav' : '']" @click="hideNav(section.id)" v-for="section of sections" :key="section.id" :href="section.id" >{{ section.name }}</a>
     </div>
 </template>
 
 <script>
 export default {
     props:[
-        'navId'
+        'navId',
+        'isGrey',
+        'sections',
+        'anchor'
     ],
     data() {
         return {
-            sections: [
-                {name: 'Home', id: '#Home' },
-                {name: 'About', id: '#About' },
-                {name: 'Experience', id: '#Experience' },
-                {name: 'Skills', id: '#Skills' },
-                {name: 'Projects', id: '#Projects' },
-                {name: 'Testimonials', id: '#Testimonials' },
-                {name: 'Contact', id: '#Contact' },
-            ],
         }
     },
     methods: {
-        hideNav() {
+        hideNav(section) {
             this.$emit('hideNav')
+            this.$emit('changeNav', section)
         }
     },
 }
@@ -36,6 +31,23 @@ export default {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+
+
+.greyNav {
+    min-width: 10vw;
+    background: var(--black2);
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    position: sticky;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    transition: 0.3s;
+}
+
 .nav {
     min-width: 10vw;
     background: var(--black);
@@ -44,13 +56,13 @@ export default {
     box-sizing: border-box;
     position: sticky;
     padding: 20px;
-}
-.nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0;
+    transition: 0.3s;
 }
+
 a{
     text-decoration: none;
     text-decoration: none;
@@ -59,17 +71,35 @@ a{
     display: inline-block;
 }
 
-.nav a {
+.unactiveNav {
     padding: 5px 10px;
     padding: 10px 0px;
     padding-left: 0;
     font-size: 16px;
     width: 100%;
-    border-bottom: 0.5px solid rgba(241, 250, 238, 0.5);
+    transition: 0.3s;
 }
 
 a:hover {
   color: var(--darkgreen);
   transition: 0.2s linear;
+}
+
+.activeAnchor{
+    margin: 10px 0px;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-left: 2px solid var(--darkgreen);
+    transition: 0.3s;
+}
+
+.activeAnchorGrey{
+    margin: 10px 0px;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-left: 2px solid var(--darkgreen);
+    transition: 0.3s;
 }
 </style>

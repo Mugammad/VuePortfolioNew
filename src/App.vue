@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Nav :navId="'navDesktop'"/>
+    <Nav :navId="'navDesktop'" :sections="sections" :isGrey="isGrey" :anchor="anchor" @changeNav="changeNav"/>
     <transition name="slideIn" mode="in-out">
-      <Nav :navId="'navMobile'" v-if="this.showNav" @hideNav="hideNav"/>
+      <Nav :navId="'navMobile'" v-if="this.showNav" @hideNav="hideNav" :sections="sections"/>
     </transition>
     <transition name="fade" mode="in-out">
       <div class="navMobileBg" v-if="this.showNav"></div>
@@ -59,6 +59,17 @@ export default {
 
   data() {
     return {
+      sections: [
+        {name: 'Home', id: '#Home' },
+        {name: 'About', id: '#About' },
+        {name: 'Experience', id: '#Experience' },
+        {name: 'Skills', id: '#Skills' },
+        {name: 'Projects', id: '#Projects' },
+        {name: 'Testimonials', id: '#Testimonials' },
+        {name: 'Contact', id: '#Contact' },
+      ],
+      anchor: '',
+      isGrey: false,
       projects: [],
       testimonials: [],
       loading: false,
@@ -66,6 +77,17 @@ export default {
     }
   },
   methods: {
+      changeNav(section){
+        this.isGrey = false
+        this.sections.forEach((sec, i) => {
+                if(sec.id == section){
+                    this.anchor = sec.name
+                    if(i%2 != 0){
+                        this.isGrey = true
+                    }
+                }
+            })
+      },
       scroll(id) {
       let screenSize = window.matchMedia("(max-width: 685px)")
       if (screenSize.matches) { // If media query matches
@@ -74,6 +96,15 @@ export default {
         document.getElementById(id).scrollIntoView({
           behavior: "smooth"
         });
+        this.isGrey = false
+            this.sections.forEach((sec, i) => {
+                if(sec.name == id){
+                  this.anchor = id
+                    if(i%2 != 0){
+                        this.isGrey = true
+                    }
+                }
+            })
       }
     },
     toggleModal(i){
@@ -246,6 +277,9 @@ export default {
 }
 
 @media screen and (max-width: 685px){
+  .landing{
+    align-items: flex-end;
+  }
   .grid{
     display: block;
   }

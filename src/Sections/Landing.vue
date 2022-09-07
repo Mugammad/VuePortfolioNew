@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style>
-
   .landing {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/images/landing/ME.jpeg);
     width: 100%;
@@ -27,9 +26,17 @@ export default {
     box-sizing: border-box;
     background-size: cover;
     background-position: center;
-    padding: 10%;
+    padding: 5%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+  }
+
+
+  #Home{
+    padding-right: 0;
+    display: flex;
+    width: 90vw;
+    flex-shrink: 0;
   }
 
 

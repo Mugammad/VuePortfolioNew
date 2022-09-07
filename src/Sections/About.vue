@@ -33,7 +33,7 @@
                 is just so cool to be able to understand something you once thought you would never be able to understand. I have been
                 really fascinated with art since a very young age, so I think that is why I chose web development.</p>
 
-                <a class="btn" href="https://github.com/Mugammad/pdf/blob/main/Resume_of_MugammadBreda.pdf" download target="_blank">DOWNLOAD RESUME</a>
+                <a class="btn" href="https://github.com/Mugammad/pdf/blob/main/Updated_Resume_of_Mugammad_Breda.pdf" download target="_blank">DOWNLOAD RESUME</a>
                 <br>
                 <div class="">
                     <!-- <img class="col-md-5 mt-5" src="./assets/images/signature.png" alt="" style=" opacity: 0.6;"> -->
@@ -60,6 +60,7 @@ export default {
 </script>
 
 <style>
+
   .line {
   margin-top: 1rem;
   border-bottom: 6px solid var(--darkgreen);
@@ -70,6 +71,7 @@ export default {
 #About {
   z-index: 1;
   background: var(--black);
+  margin-left: 0;
 }
 
 .aboutInfo {
