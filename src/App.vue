@@ -154,6 +154,7 @@ export default {
   --black2: #292929;
   --grey: #b8b8b8;
   --darkgreen: 	#346751;
+  --darkgreen2: 	#34675169;
   --peach: #C84B31;
   --lightpink: #ECDBBA;
 }
@@ -164,6 +165,29 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   background: var(--black);
   display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+  opacity: 0; */
+  display: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--darkgreen2);
+  opacity: 0.3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--darkgreen);
 }
 
 .sections {
@@ -194,6 +218,14 @@ export default {
   box-sizing: border-box;
   padding: 10%;
   text-align: left;
+  height: 100vh;
+  overflow-y: hidden;
+  margin-right: 5px;
+}
+
+.inside:hover{
+  overflow-y: scroll;
+  margin: 0;
 }
 
 #Home {
